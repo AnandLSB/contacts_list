@@ -94,6 +94,7 @@ class _MyAppState extends State<MyApp> {
               subtitle: Text(contact["phone"]),
               trailing: Text(timeago.format(DateTime.parse(contact["check-in"]),
                   locale: 'en')),
+              //share contact on tap of list item
               onTap: () {
                 share(context, contact);
               },
