@@ -84,6 +84,7 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Contacts List'),
         ),
         body: ListView(
+          //map contacts to listview
           children: _contacts.map((Map contact) {
             return ListTile(
               leading: CircleAvatar(
