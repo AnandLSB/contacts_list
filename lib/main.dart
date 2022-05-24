@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:timeago/timeago.dart' as timeago;
-import 'package:share_plus/share_plus.dart';
+import 'package:timeago/timeago.dart' as timeago; //timeago plugin
+import 'package:share_plus/share_plus.dart'; //share plus plugin
 
 void main() {
   runApp(const MyApp());
@@ -21,6 +21,7 @@ share(BuildContext context, Map _contacts) {
 }
 
 class _MyAppState extends State<MyApp> {
+  //list of contacts
   final List<Map> _contacts = <Map>[
     {
       "user": "Chan Saw Lin",
@@ -47,10 +48,31 @@ class _MyAppState extends State<MyApp> {
       "phone": "0112731912",
       "check-in": "2020-08-15 13:00:05",
     },
+    {
+      "user": "Yong Weng Kai",
+      "phone": "0172332743",
+      "check-in": "2020-07-31 18:10:11",
+    },
+    {
+      "user": "Jayden Lee",
+      "phone": "0191236439",
+      "check-in": "2020-08-22 08:10:38",
+    },
+    {
+      "user": "Kong Kah Yan",
+      "phone": "0111931233",
+      "check-in": "2020-07-11 12:00:00",
+    },
+    {
+      "user": "Jasmine Lau",
+      "phone": "0162879190",
+      "check-in": "2020-08-01 12:10:05",
+    },
   ];
 
   @override
   Widget build(BuildContext context) {
+    //sorting contacts by check-in time
     _contacts.sort((a, b) {
       return DateTime.parse(b["check-in"])
           .compareTo(DateTime.parse(a["check-in"]));
